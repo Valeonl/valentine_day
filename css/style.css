@@ -90,6 +90,20 @@ input {outline:none;}
 }
 
 
+
+.angel {
+    position: absolute;
+    width: 300px;
+    top: 10px;
+    left: -30px;    
+    transform: rotate(-15deg);
+}
+
+
+
+
+
+
 .button {
   border-radius: 4px;
   background-color: #f4511e;
