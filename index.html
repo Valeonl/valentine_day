@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-AU-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
     <title> Saint Valentine Day</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="heart">
             <img class="angel" src="css/pics/angel.png">
-            <input type="text" placeholder="Введите код" class="code" maxlength=7>
-            <button class="submit"><span>Узнать<br>пожелание!</span></button>
+            <input type="text" placeholder="Введите код" class="code" maxlength=7
+            id="code_value" pattern="2-[0-9]{3}-[0-9]{3}">
+            <button class="submit" onclick="getWunch();"><span>Узнать<br>пожелание!</span></button>
         </div>
     </div>
 </body>
