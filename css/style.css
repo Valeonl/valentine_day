@@ -93,9 +93,8 @@ input {outline:none;}
 
 .angel {
     position: absolute;
-    width: 300px;
-    top: 10px;
-    left: -30px;    
+    width: 30%;
+    top: 10px;   
     transform: rotate(-15deg);
 }
 
