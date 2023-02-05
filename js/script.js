@@ -1,14 +1,13 @@
-const CodeArray = {
-    "1234567": "Ты молодец!",
-    "2345678": "Ты не молодец("
-}
-
-
+//Регулярное выражение для проверки кода
+const regexp = /\d[A-Z,a-z]\d\d[A-Z,a-z][A-Z,a-z]\d/
 function getWunch(){
-    code = document.getElementById('code_value').value.toUpperCase();
-    if(code !== "")
-    {
-        alert(`Ваше пожелание: ${CodeArray[code]}`);
-    }
-    else alert("Вы не ввели код!")
+    code = document.getElementById('code_value').value.toUpperCase(); 
+    if(code.length != 7 || !regexp.test(code))  
+        {
+            alert('Введённый код не соответсвует формату: 0А00АА0');
+            return;
+        } 
+    
+    alert(`Ваше пожелание: ${CodeArray[code]}`);
+       
 }
