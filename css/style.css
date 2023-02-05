@@ -28,6 +28,8 @@ body {
     flex-direction: column;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;
+    position: relative;
+
 }
 
 .code {
@@ -94,9 +96,8 @@ input {outline:none;}
 .angel {
     position: absolute;
     width: 300px;
-    top: 10px;   
     transform: rotate(-15deg);
-    
+    top: -15%;
 }
 
 
