@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {    
+    height: 100%;
+}
+body {
+    background: url(pics/bg.jpg);
+    background-size: 120% 100%;
+}
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;   
+    border: 2px solid green;
+}
+.heart {
+    background: url(pics/heart.png) no-repeat center;
+    background-size: contain;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    /*border: 2px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+}
+
+.code {
+    background: url(pics/placeholder.png) no-repeat top left;
+    background-size: contain;
+
+    height: calc(174px*0.7);
+    width: calc(409px*0.7);
+    text-align: center;
+    font-size:2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 auto;
+
+    border-style: none;
+    color: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+}
+input {outline:none;}
+
+.gold {
+    color: transparent;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+    -webkit-background-clip: text;
+}
+
+.submit {
+    background: url(pics/bilet.png) no-repeat top left;
+    background-size: contain;
+    height: calc(248px*0.3);
+    width: calc(510px*0.3);
+    border-style: none;
+    
+    font-family: sans-serif;
+    
+    font-size: 1.5em;
+    text-shadow: 2px 0 2px black, 
+    0 2px 2px black, 
+    -2px 0 2px black, 
+    0 -2px 2px black;
+    color: white;
+
+}
+.submit:active{
+    color:maroon;
+}
+.submit:hover{
+    
+
+    text-shadow: 2px 0 2px white, 
+    0 2px 2px white, 
+    -2px 0 2px white, 
+    0 -2px 2px white;
+    color: #8B4513;
+}
+
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
