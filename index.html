@@ -11,11 +11,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="heart">
-            <img class="angel" src="css/pics/angel.png">
-            <input type="text" placeholder="Введите код" class="code" maxlength=7
+        <div class="card">
+            <div class="front">
+                <img class="angel" src="css/pics/angel.png">
+                <input type="text" placeholder="Введите код" class="code" maxlength=7
             id="code_value" pattern="2-[0-9]{3}-[0-9]{3}">
-            <button class="submit" onclick="getWunch();"><span>Узнать<br>пожелание!</span></button>
+                <button class="submit" onclick="getWunch();"><span>Узнать<br>пожелание!</span></button>
+            </div>
+            <div class="back">
+                <img class="angel" src="css/pics/angel.png">
+                <div class="desire_wrap">
+                    <textarea id="desire" cols="30" rows="5" readonly></textarea>
+                </div>
+                
+                <button class="submit" onclick="Screenshot();"><span>
+                    Сохранить скриншот!
+                </span></button>
+            </div>
+            
         </div>
     </div>
 </body>
