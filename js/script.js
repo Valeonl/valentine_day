@@ -7,12 +7,13 @@ function getWunch(){
             alert('Введённый код не соответсвует формату: 0А00АА0');
             return;
         } 
+    document.getElementById('desire').value = `"${desire_text}"`;    
     front =  document.querySelector('.front');
     back =  document.querySelector('.back');
     front.style.transform = 'rotateY(180deg)';
     back.style.transform = 'rotateY(360deg)';
     desire_text = CodeArray[code];
-    document.getElementById('desire').value = `"${desire_text}"`;    
+    
        
 }
 
