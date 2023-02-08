@@ -5,7 +5,7 @@
 body, html {    
     height: 100%;
     font-family: sans-serif;
-    overflow:hidden;
+    overflow-x: hidden;
 }
 body {
     background: url(pics/bg.jpg);
@@ -18,8 +18,7 @@ body {
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;   
 }
-.card {
-   
+.card {   
    position: relative;
    width: 400px;
    height: 400px;
@@ -36,8 +35,7 @@ body {
 .front{
     background: url(pics/heart.png) no-repeat center;
     background-size: contain;
-    width: 400px;
-    height: 400px;
+    
     display: inline-block;
     /*border: 2px solid red;*/
     display: flex;
@@ -78,8 +76,7 @@ body {
 .back {
     background: url(pics/heart.png) no-repeat center;
     background-size: contain;
-    width: 400px;
-    height: 400px;
+    
     display: inline-block;
     /*border: 2px solid red;*/
     display: flex;

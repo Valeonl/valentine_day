@@ -39,11 +39,14 @@ async function Screenshot(){
             video.play();
 
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            stream.getVideoTracks()[0].stop();
+            //stream.getVideoTracks()[0].stop();
+            document.body.appendChild(canvas);
+            /*
             let a = document.createElement("a");
             a.download = "ss.png";
             a.href = canvas.toDataURL("image/png");
             a.click();
+            */
         });
         video.srcObject = stream;
         console.log(stream);
