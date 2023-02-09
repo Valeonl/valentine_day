@@ -6,11 +6,12 @@
     <meta http-equiv="X-AU-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/code_list.js"></script>
+    <script src="js/html2canvas.min.js"></script>
     <script src="js/script.js"></script>
     <title> Saint Valentine Day</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="scrn">
         <div class="card">
             <div class="front">
                 <img class="angel" src="css/pics/angel.png">
@@ -21,10 +22,12 @@
             <div class="back">
                 <img class="angel" src="css/pics/angel.png">
                 <div class="desire_wrap">
-                    <textarea id="desire" cols="30" rows="5" readonly></textarea>
+                    <div id="desire">
+
+                    </div>
                 </div>
                 
-                <button class="submit" onclick="Screenshot();"><span>
+                <button class="submit" onclick="takeshot();"><span id="screen_text">
                     Сохранить скриншот!
                 </span></button>
             </div>

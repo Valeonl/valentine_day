@@ -30,6 +30,7 @@ body {
     width: 100%;
     height: 100%;
     left: 0;
+    z-index: auto;
     top: 0;
 }
 .front{
@@ -42,25 +43,24 @@ body {
     flex-direction: column;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;
+    
 
 }
 .desire_wrap {
     width: 350px;
-    height: 150px;
+    height: 200px;
     background: url(pics/placeholder.png) no-repeat top left;
-    background-size: contain;
+    background-size: 100% 100%;
     /*border: 5px solid red;*/
     display: flex;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;
 }
 #desire {
-    width: 90%;
-    height: 80%;
+    width: 90%;    
     resize: none;
     outline: none;
-    background: none;
-    border: none;
+   
     color: white;
     font-size: 20px;
     overflow: auto;
@@ -71,8 +71,8 @@ body {
     0 -2px 2px black;
     font-style: italic;
 }
-#desire:before { content: open-quote; }
-#desire:after  { content: close-quote; }
+#desire:before { content: '" ' }
+#desire:after  { content: ' "' }
 .back {
     background: url(pics/heart.png) no-repeat center;
     background-size: contain;

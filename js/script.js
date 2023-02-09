@@ -8,7 +8,7 @@ function getWunch(){
             return;
         } 
     desire_text = CodeArray[code];
-    document.getElementById('desire').value = `"${desire_text}"`;    
+    document.getElementById('desire').innerHTML = `${desire_text}`;    
     front =  document.querySelector('.front');
     back =  document.querySelector('.back');
     front.style.transform = 'rotateY(180deg)';
@@ -16,6 +16,19 @@ function getWunch(){
     
     
        
+}
+function takeshot() {
+    document.querySelector('.front').style.display = "none";
+    document.getElementById('screen_text').innerHTML = 'Моё пожелание)';   
+    
+    html2canvas(document.body).then(canvas => {
+        let a = document.createElement("a");
+        a.download = "ss.png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+      });
+    
+    document.getElementById('screen_text').innerHTML = 'Сохранить скриншот!';   
 }
 
 async function Screenshot(){
