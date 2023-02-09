@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.progress-value').addEventListener("load", timeout_trigger());
+});
+p = 0;
+
+function timeout_trigger() {
+    progress_bar = document.querySelector('.progress-value');
+    white_bg = document.querySelector('.white_space');
+    console.log(white_bg);
+    progress_bar.setAttribute("style",`width:${p+1}%`);
+    document.querySelector('.load_value').innerHTML =`${p}%`;
+   if(p!=100) {
+       setTimeout('timeout_trigger()', 50);
+   }
+   p++;
+   if(p>100)
+    {
+        white_bg.classList.add('hide');
+    }
+}
+
+
 //Регулярное выражение для проверки кода
 const regexp = /\d[A-Z,a-z]\d\d[A-Z,a-z][A-Z,a-z]\d/
 function getWunch(){
