@@ -10,7 +10,7 @@ function timeout_trigger() {
     progress_bar.setAttribute("style",`width:${p+1}%`);
     document.querySelector('.load_value').innerHTML =`${p}%`;
    if(p!=100) {
-       setTimeout('timeout_trigger()', 50);
+       setTimeout('timeout_trigger()', 30);
    }
    p++;
    if(p>100)
@@ -45,7 +45,7 @@ function takeshot() {
     
     html2canvas(document.body).then(canvas => {
         let a = document.createElement("a");
-        a.download = "ss.png";
+        a.download = "my_valentins_desire.png";
         a.href = canvas.toDataURL("image/png");
         a.click();
       });
