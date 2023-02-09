@@ -3,17 +3,16 @@
     padding: 0;
 }
 body, html {    
-    height: 100%;
     font-family: sans-serif;
     overflow-x: hidden;
+    height: 100%;
 }
 body {
     background: url(pics/bg.jpg);
-    background-size: 120% 100%;
+    background-size: cover;
 }
 .wrapper {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
     display: flex;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;   
