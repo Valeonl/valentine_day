@@ -22,7 +22,7 @@ body {
    position: relative;
    width: 400px;
    height: 400px;
-   perspective: 1000px;
+   -webkit-perspective: 1000px;
 }
 
 .front, .back {
@@ -83,12 +83,12 @@ body {
     flex-direction: column;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center;
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
     
 }
 .front, .back {
     transition: 1.3s;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 /*
 .card:hover .front {
@@ -118,7 +118,7 @@ input {outline:none;}
 .gold {
     color: transparent;
     position: absolute;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     letter-spacing: 5px;
@@ -162,12 +162,12 @@ input {outline:none;}
 .angel {
     position: absolute;
     width: 300px;
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
     top: -15%;
 }
 
 .back .angel {   
-    transform: scale(-1, 1);     
+    -webkit-transform: scale(-1, 1);     
 }
 
 
