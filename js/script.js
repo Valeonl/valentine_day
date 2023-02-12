@@ -29,7 +29,12 @@ function getWunch(){
             alert('Введённый код не соответсвует формату: 0А00АА0');
             return;
         } 
+	
+		
     desire_text = CodeArray[code];
+	if (typeof desire_text !== 'undefined'){
+		desire_text = "Святого Валентина лучше не обманывать)";
+	}
     document.getElementById('desire').innerHTML = `${desire_text}`;    
     front =  document.querySelector('.front');
     back =  document.querySelector('.back');
