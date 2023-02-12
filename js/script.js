@@ -32,7 +32,7 @@ function getWunch(){
 	
 		
     desire_text = CodeArray[code];
-	if (typeof desire_text !== 'undefined'){
+	if (typeof desire_text == 'undefined'){
 		desire_text = "Святого Валентина лучше не обманывать)";
 	}
     document.getElementById('desire').innerHTML = `${desire_text}`;    
