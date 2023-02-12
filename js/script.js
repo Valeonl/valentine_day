@@ -1,16 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.progress-value').addEventListener("load", timeout_trigger());
+    
+	gender = getAllUrlParams().gender;
+	console.log(gender);
+	front = document.querySelector('.front');
+	back =  document.querySelector('.back');
+  preloader_idio = document.querySelector('.ldio div');
+  preloader_idio_2 = document.querySelector('.ldio div:before, .ldio div:after');
+  progressbar = document.querySelector('.progress-value');
+  progressbar.addEventListener("load", timeout_trigger());
+	if (gender == "male") {
+		front.style.backgroundImage="url(css/pics/heart_male.png)";
+		back.style.backgroundImage="url(css/pics/heart_male.png)";
+    preloader_idio.style.background = '#455AA5';
+    preloader_idio.classList.toggle('gender');
+    progressbar.classList.toggle('gender');
+    progressbar.style.background = '#455AA5';
+
+	}
+	else {
+		front.style.backgroundImage="url(css/pics/heart.png)";
+		back.style.backgroundImage="url(css/pics/heart.png)";
+    preloader_idio.style.background = 'red';
+    progressbar.style.background = 'red';
+	}
+	
 });
 p = 0;
 
 function timeout_trigger() {
     progress_bar = document.querySelector('.progress-value');
     white_bg = document.querySelector('.white_space');
-    console.log(white_bg);
+    //console.log(white_bg);
     progress_bar.setAttribute("style",`width:${p+1}%`);
     document.querySelector('.load_value').innerHTML =`${p}%`;
    if(p!=100) {
-       setTimeout('timeout_trigger()', 30);
+       setTimeout('timeout_trigger()', 0);
    }
    p++;
    if(p>100)
@@ -24,6 +48,9 @@ function timeout_trigger() {
 const regexp = /\d[A-Z,a-z]\d\d[A-Z,a-z][A-Z,a-z]\d/
 function getWunch(){
     code = document.getElementById('code_value').value.toUpperCase(); 
+	desire_block = document.getElementById('desire');
+	front =  document.querySelector('.front');
+    back =  document.querySelector('.back');
     if(code.length != 7 || !regexp.test(code))  
         {
             alert('Введённый код не соответсвует формату: 0А00АА0');
@@ -35,9 +62,15 @@ function getWunch(){
 	if (typeof desire_text == 'undefined'){
 		desire_text = "Святого Валентина лучше не обманывать)";
 	}
-    document.getElementById('desire').innerHTML = `${desire_text}`;    
-    front =  document.querySelector('.front');
-    back =  document.querySelector('.back');
+	
+	if( desire_text.length > 150) {
+		console.log(desire_text.length);
+		desire_block.style = 'font-size: 1em;';
+	}
+	else desire_block.style = 'font-size: 1.2em;';
+	
+    desire_block.innerHTML = `${desire_text}`;    
+    
     front.style.transform = 'rotateY(180deg)';
     back.style.transform = 'rotateY(360deg)';
     
@@ -96,4 +129,66 @@ async function Screenshot(){
     catch (error) {
         console.log(error);
     }
+}
+
+function getAllUrlParams(url) {
+
+  // извлекаем строку из URL или объекта window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+  // объект для хранения параметров
+  var obj = {};
+
+  // если есть строка запроса
+  if (queryString) {
+
+    // данные после знака # будут опущены
+    queryString = queryString.split('#')[0];
+
+    // разделяем параметры
+    var arr = queryString.split('&');
+
+    for (var i=0; i<arr.length; i++) {
+      // разделяем параметр на ключ => значение
+      var a = arr[i].split('=');
+
+      // обработка данных вида: list[]=thing1&list[]=thing2
+      var paramNum = undefined;
+      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+        paramNum = v.slice(1,-1);
+        return '';
+      });
+
+      // передача значения параметра ('true' если значение не задано)
+      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+
+      // преобразование регистра
+      paramName = paramName.toLowerCase();
+      paramValue = paramValue.toLowerCase();
+
+      // если ключ параметра уже задан
+      if (obj[paramName]) {
+        // преобразуем текущее значение в массив
+        if (typeof obj[paramName] === 'string') {
+          obj[paramName] = [obj[paramName]];
+        }
+        // если не задан индекс...
+        if (typeof paramNum === 'undefined') {
+          // помещаем значение в конец массива
+          obj[paramName].push(paramValue);
+        }
+        // если индекс задан...
+        else {
+          // размещаем элемент по заданному индексу
+          obj[paramName][paramNum] = paramValue;
+        }
+      }
+      // если параметр не задан, делаем это вручную
+      else {
+        obj[paramName] = paramValue;
+      }
+    }
+  }
+
+  return obj;
 }

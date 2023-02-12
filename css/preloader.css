@@ -64,6 +64,16 @@
     position: absolute;
     width: 30px;
   }
+
+  .ldio div.gender:before,
+  .ldio div.gender:after {
+    content: "";
+    background-color: #455AA5 !important;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+  }
   
   .ldio div:before {
     top: -15px;
@@ -106,6 +116,9 @@
     width: 10%;
   }
   
+  .gender {
+    background: #455AA5 !important;
+  }
 
 
 
