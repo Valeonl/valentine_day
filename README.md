@@ -2,7 +2,7 @@
 Данный проект является цифровым дополнением к бумажным поздравительным валентинкам.
 **Код для пожеланий указвался на печатных версиях Валентинок**
 
-**Сайт:**[ https://enciclo.github.io/valentine_day/](https://valeonl.github.io/valentine_day/)
+**Сайт:**[ https://valeonl.github.io/valentine_day/](https://valeonl.github.io/valentine_day/)
 
 **Можете попробовать ввести тестовый код:** <pre><code>0А00АА0</code></pre>
 ![image](https://github.com/user-attachments/assets/165a1c8d-425a-49ee-9858-8820145f142d)
